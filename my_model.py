@@ -25,7 +25,6 @@ mp_model = mp_hands.Hands(
 )
 
 
-@st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_model_from_github():
     # Download the pickle model file from GitHub
     url = "https://raw.githubusercontent.com/bazzimahdi/asl-sign-language-recognition-mediapipe/master/svm_model.pkl"
@@ -37,7 +36,6 @@ def load_model_from_github():
     return clf
 
 
-@st.cache(suppress_st_warning=True)
 def run_object_detection():
     clf = load_model_from_github()
 
