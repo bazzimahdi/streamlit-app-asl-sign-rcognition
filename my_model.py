@@ -31,8 +31,7 @@ def load_model_from_github():
 
 
 def run_from_video(video_path, thresh):
-    clf = load_model_from_github()
-
+    
     cap = cv2.VideoCapture(video_path)
     i = 0  # frame counter
     stframe = st.empty()
@@ -78,7 +77,7 @@ def run_from_video(video_path, thresh):
 
 
 def run_object_detection(thresh):
-    clf = load_model_from_github()
+    
     stframe = st.empty()  # Placeholder for displaying the video
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     if not cap.isOpened():
@@ -160,7 +159,7 @@ h2 {
 
 
 def main():
-    
+    clf = load_model_from_github()
     st.set_page_config(page_title='Sign Language Recognition',layout='wide',page_icon= 'icon.png')
 
     st.markdown(custom_styles,unsafe_allow_html=True)
