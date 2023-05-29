@@ -160,7 +160,7 @@ h2 {
 
 
 def main():
-    st.set_page_config(page_title='Sign Language Recognition',layout='wide',page_icon= "icon.png")
+    st.set_page_config(page_title='Sign Language Recognition',layout='wide',page_icon= "https://github.com/bazzimahdi/streamlit-app/blob/main/icon.png")
 
     st.markdown(custom_styles,unsafe_allow_html=True)
 
