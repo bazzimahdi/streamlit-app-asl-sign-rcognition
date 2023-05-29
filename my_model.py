@@ -160,7 +160,12 @@ h2 {
 
 
 def main():
-    st.set_page_config(page_title='Sign Language Recognition',layout='wide',page_icon= "https://github.com/bazzimahdi/streamlit-app/blob/main/icon.png")
+    
+    url_icon = "https://raw.githubusercontent.com/bazzimahdi/asl-sign-language-recognition-mediapipe/master/icon.png"
+    icon_path = "svm_model.pkl"  # Path to save the downloaded model file
+    urllib.request.urlretrieve(url_icon, icon_path)
+
+    st.set_page_config(page_title='Sign Language Recognition',layout='wide',page_icon= icon_path)
 
     st.markdown(custom_styles,unsafe_allow_html=True)
 
