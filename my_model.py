@@ -189,10 +189,11 @@ def main():
         temp_file_path = "temp_video.mp4"
         with open(temp_file_path, "wb") as temp_file:
             temp_file.write(video_bytes)
-    
-        run_from_video(temp_file_path,thresh=threshold)
-        st.write("upload done!")
 
+        st.write("upload done!")
+        if st.button('process video'):
+            run_from_video(temp_file_path,thresh=threshold)
+            
     st.write("")
     st.write("")
     st.write("--------------------------------------------------------------------------------------------------------------------------------")
