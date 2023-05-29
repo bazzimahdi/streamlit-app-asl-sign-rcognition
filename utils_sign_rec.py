@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
 import mediapipe as mp
 import pandas as pd
 import cv2
 import tensorflow as tf
 
-
-# In[2]:
 
 
 def preprocess_image(path):
@@ -20,8 +15,6 @@ def preprocess_image(path):
     img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     return img
 
-
-# In[3]:
 
 
 def get_landmarks_list(image,results):
@@ -37,7 +30,6 @@ def get_landmarks_list(image,results):
     return landmarks
 
 
-# In[ ]:
 
 
 def preprocess_landmark(landmarks_list,normalize=True):
@@ -64,7 +56,7 @@ def preprocess_landmark(landmarks_list,normalize=True):
     return relative_landmarks
 
 
-# In[5]:
+
 
 
 def get_bbox(cx_data,cy_data,delta=50):
@@ -76,14 +68,19 @@ def get_bbox(cx_data,cy_data,delta=50):
     return bbox
 
 
-# In[6]:
+
 
 
 def return_alphabet(number):
+    # map numbers to alphabets
+    alphabet = list(string.ascii_uppercase)
+    dict_alphabet = {}
+    for i in range(26):
+        dict_alphabet[i] = alphabet[i]
     return dict_alphabet[number]
 
 
-# In[ ]:
+
 
 
 
