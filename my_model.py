@@ -30,7 +30,7 @@ def load_model_from_github():
     return clf
 
 
-def run_from_video(video_path, thresh):
+def run_from_video(video_path, thresh, clf):
     
     cap = cv2.VideoCapture(video_path)
     i = 0  # frame counter
@@ -76,7 +76,7 @@ def run_from_video(video_path, thresh):
 
 
 
-def run_object_detection(thresh):
+def run_object_detection(thresh, clf):
     
     stframe = st.empty()  # Placeholder for displaying the video
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
@@ -192,14 +192,14 @@ def main():
 
         st.write("upload done!")
         if st.button('process video'):
-            run_from_video(temp_file_path,thresh=threshold)
+            run_from_video(temp_file_path,thresh=threshold, clf)
             
     st.write("")
     st.write("")
     st.write("--------------------------------------------------------------------------------------------------------------------------------")
     st.write("Run the model in Real-time")
     if st.button("Run Object Detection"):
-        run_object_detection(thresh=threshold)
+        run_object_detection(thresh=threshold, clf)
 
 if __name__ == "__main__":
     main()
