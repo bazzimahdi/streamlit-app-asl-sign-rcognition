@@ -192,14 +192,14 @@ def main():
 
         st.write("upload done!")
         if st.button('process video'):
-            run_from_video(temp_file_path,thresh=threshold, clf)
+            run_from_video(temp_file_path,threshold, clf)
             
     st.write("")
     st.write("")
     st.write("--------------------------------------------------------------------------------------------------------------------------------")
     st.write("Run the model in Real-time")
     if st.button("Run Object Detection"):
-        run_object_detection(thresh=threshold, clf)
+        run_object_detection(threshold, clf)
 
 if __name__ == "__main__":
     main()
